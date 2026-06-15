@@ -4,7 +4,7 @@
 
 ## Skill 目录一览
 
-全部 Skill 位于 `.opencode/skills/` 目录下，按章节阶段以前缀命名，共 55 个。
+全部 Skill 位于 `.opencode/skills/` 目录下，按章节阶段以前缀命名。
 
 ### 第 03 章 · 基础三形态（`base-`）
 
