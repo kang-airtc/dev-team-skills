@@ -1,0 +1,15 @@
+FROM python:${PYTHON_VERSION}-slim
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+COPY requirements.txt* ./
+RUN if [ -f requirements.txt ]; then \
+      pip install --no-cache-dir -r requirements.txt; \
+    else \
+      pip install --no-cache-dir fastapi uvicorn; \
+    fi
+COPY . .
+RUN useradd -m -u 1001 fastapi && chown -R fastapi:fastapi /app
+USER fastapi
+EXPOSE ${BACKEND_PORT}
+CMD ["uvicorn", "${BACKEND_MODULE}", "--host", "0.0.0.0", "--port", "${BACKEND_PORT}"]

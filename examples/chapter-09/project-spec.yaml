@@ -1,0 +1,28 @@
+# docker-compose-setup 输入示例
+# 用法：
+#   python .opencode/skills/docker-compose-setup/scripts/generate.py \
+#     --spec examples/chapter-09/project-spec.yaml \
+#     --output examples/chapter-09/release-demo
+#
+# 字段含义详见 generate.py 的 build_substitutions()；未列出的字段会走脚本默认值。
+# 本配置对齐配套仓库 release-demo/ 的实际产物（nginx 静态前端 + FastAPI + PostgreSQL）。
+
+project: release-demo
+
+frontend:
+  framework: nginx-static   # 可选：nginx-static / nextjs
+  port: 3000                # 宿主机端口
+  container_port: 80        # 容器内端口（nginx 默认 80；nextjs 默认 3000）
+
+backend:
+  framework: fastapi
+  python_version: "3.11"
+  port: 8000
+  module: app.main:app
+
+db:
+  type: postgres
+  version: "15-alpine"
+  database: demo
+  user: demo
+  host_port: 5433           # 宿主机映射端口，避免与本机已有 PostgreSQL 冲突

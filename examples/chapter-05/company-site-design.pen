@@ -1,0 +1,465 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "Hvar8",
+      "x": 0,
+      "y": 0,
+      "name": "公司首页",
+      "width": 1200,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Dfx2l",
+          "name": "navbar",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "#FFFFFF",
+          "padding": [
+            24,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "yxVbw",
+              "name": "logo",
+              "fill": "#1E293B",
+              "content": "TechCorp",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "Yzuh9",
+              "name": "navLinks",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IDty2",
+                  "fill": "#64748B",
+                  "content": "产品",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Rc7b6",
+                  "fill": "#64748B",
+                  "content": "解决方案",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "osk5n",
+                  "fill": "#64748B",
+                  "content": "关于我们",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "hHlt4",
+                  "fill": "#64748B",
+                  "content": "联系我们",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vtluX",
+              "name": "navBtn",
+              "height": 40,
+              "fill": "#2563EB",
+              "cornerRadius": 8,
+              "padding": [
+                12,
+                24
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "U0HIh",
+                  "fill": "#FFFFFF",
+                  "content": "开始使用",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "T9wkSM",
+          "name": "hero",
+          "width": "fill_container",
+          "fill": "#F8FAFC",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            80,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "vsvcf",
+              "name": "heroTitle",
+              "fill": "#0F172A",
+              "content": "为企业数字化转型赋能",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "Q5riq",
+              "name": "heroSubtitle",
+              "fill": "#64748B",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "我们提供一站式数字化解决方案，帮助企业提升效率、降低成本、加速创新",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "n10ym",
+              "name": "heroButtons",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "y1fgt",
+                  "name": "heroBtn1",
+                  "height": 48,
+                  "fill": "#2563EB",
+                  "cornerRadius": 8,
+                  "padding": [
+                    16,
+                    32
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "xAN8D",
+                      "fill": "#FFFFFF",
+                      "content": "免费试用",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qmsrw",
+                  "name": "heroBtn2",
+                  "height": 48,
+                  "fill": "#00000000",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "outside",
+                    "thickness": 2,
+                    "fill": "#2563EB"
+                  },
+                  "padding": [
+                    16,
+                    32
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Nqnp0",
+                      "fill": "#2563EB",
+                      "content": "了解更多",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "y1Qq4",
+          "name": "features",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "rch4O",
+              "name": "featuresTitle",
+              "fill": "#0F172A",
+              "content": "核心服务",
+              "fontFamily": "Inter",
+              "fontSize": 36,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "dgXHz",
+              "name": "featuresGrid",
+              "gap": 24,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "utqjv",
+                  "name": "feature1",
+                  "width": 340,
+                  "fill": "#F8FAFC",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "OGA8c",
+                      "width": 40,
+                      "height": 40,
+                      "iconFontName": "cloud",
+                      "iconFontFamily": "lucide",
+                      "fill": "#2563EB"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pPuEG",
+                      "fill": "#0F172A",
+                      "content": "云服务解决方案",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PFGn4",
+                      "fill": "#64748B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "提供安全可靠的云端基础设施，支持弹性扩展和高可用架构",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n1bp2m",
+                  "name": "feature2",
+                  "width": 340,
+                  "fill": "#F8FAFC",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "NEDSi",
+                      "width": 40,
+                      "height": 40,
+                      "iconFontName": "bar-chart-3",
+                      "iconFontFamily": "lucide",
+                      "fill": "#2563EB"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G8ZmlD",
+                      "fill": "#0F172A",
+                      "content": "数据分析平台",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "CiZgv",
+                      "fill": "#64748B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "实时数据洞察与智能分析，助力企业做出更明智的商业决策",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UO576",
+                  "name": "feature3",
+                  "width": 340,
+                  "fill": "#F8FAFC",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "a25pV8",
+                      "width": 40,
+                      "height": 40,
+                      "iconFontName": "shield-check",
+                      "iconFontFamily": "lucide",
+                      "fill": "#2563EB"
+                    },
+                    {
+                      "type": "text",
+                      "id": "M0uLcA",
+                      "fill": "#0F172A",
+                      "content": "企业安全服务",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "agvi1",
+                      "fill": "#64748B",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "全方位安全防护体系，保障企业数据和业务系统安全稳定运行",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YNYY3",
+          "name": "footer",
+          "width": "fill_container",
+          "fill": "#0F172A",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": 48,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "C5NAnf",
+              "name": "footerLogo",
+              "fill": "#FFFFFF",
+              "content": "TechCorp",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Fod7m",
+              "name": "footerLinks",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "oN6ou",
+                  "fill": "#94A3B8",
+                  "content": "产品",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "FprCR",
+                  "fill": "#94A3B8",
+                  "content": "解决方案",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "tsaSL",
+                  "fill": "#94A3B8",
+                  "content": "关于我们",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Wrl8M",
+                  "fill": "#94A3B8",
+                  "content": "联系我们",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "rHG78",
+              "name": "footerCopyright",
+              "fill": "#64748B",
+              "content": "© 2024 TechCorp. All rights reserved.",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

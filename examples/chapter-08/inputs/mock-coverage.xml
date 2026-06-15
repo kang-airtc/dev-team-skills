@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<coverage version="7.4.0" timestamp="1714099200" lines-valid="320" lines-covered="246" line-rate="0.7688" branches-covered="0" branches-valid="0" branch-rate="0">
+    <sources>
+        <source>/Users/ksj/Desktop/github/dev-team-skills/examples/corporate-site/server</source>
+    </sources>
+    <packages>
+        <package name="app" line-rate="0.85" branch-rate="0">
+            <classes>
+                <class name="main.py" filename="app/main.py" line-rate="0.95" branch-rate="0">
+                    <lines>
+                        <line number="1" hits="1"/>
+                        <line number="9" hits="1"/>
+                        <line number="13" hits="1"/>
+                        <line number="20" hits="0"/>
+                    </lines>
+                </class>
+                <class name="auth_utils.py" filename="app/auth_utils.py" line-rate="0.92" branch-rate="0">
+                    <lines>
+                        <line number="15" hits="3"/>
+                        <line number="19" hits="3"/>
+                        <line number="23" hits="2"/>
+                        <line number="29" hits="5"/>
+                        <line number="40" hits="0"/>
+                    </lines>
+                </class>
+                <class name="config.py" filename="app/config.py" line-rate="1.0" branch-rate="0">
+                    <lines>
+                        <line number="1" hits="1"/>
+                        <line number="10" hits="1"/>
+                    </lines>
+                </class>
+                <class name="database.py" filename="app/database.py" line-rate="0.78" branch-rate="0">
+                    <lines>
+                        <line number="1" hits="1"/>
+                        <line number="15" hits="1"/>
+                        <line number="22" hits="0"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+        <package name="app.api" line-rate="0.72" branch-rate="0">
+            <classes>
+                <class name="response.py" filename="app/api/response.py" line-rate="1.0" branch-rate="0">
+                    <lines>
+                        <line number="5" hits="10"/>
+                        <line number="10" hits="6"/>
+                    </lines>
+                </class>
+                <class name="exceptions.py" filename="app/api/exceptions.py" line-rate="0.88" branch-rate="0">
+                    <lines>
+                        <line number="3" hits="5"/>
+                        <line number="9" hits="3"/>
+                    </lines>
+                </class>
+                <class name="error_codes.py" filename="app/api/error_codes.py" line-rate="0.95" branch-rate="0">
+                    <lines>
+                        <line number="3" hits="20"/>
+                    </lines>
+                </class>
+                <class name="router.py" filename="app/api/router.py" line-rate="1.0" branch-rate="0">
+                    <lines>
+                        <line number="1" hits="1"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+        <package name="app.api.auth" line-rate="0.65" branch-rate="0">
+            <classes>
+                <class name="views.py" filename="app/api/auth/views.py" line-rate="0.62" branch-rate="0">
+                    <lines>
+                        <line number="10" hits="3"/>
+                        <line number="15" hits="3"/>
+                        <line number="20" hits="0"/>
+                        <line number="28" hits="0"/>
+                        <line number="35" hits="0"/>
+                    </lines>
+                </class>
+                <class name="schemas.py" filename="app/api/auth/schemas.py" line-rate="1.0" branch-rate="0">
+                    <lines>
+                        <line number="3" hits="5"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+        <package name="app.api.comments" line-rate="0.45" branch-rate="0">
+            <classes>
+                <class name="views.py" filename="app/api/comments/views.py" line-rate="0.38" branch-rate="0">
+                    <lines>
+                        <line number="15" hits="2"/>
+                        <line number="22" hits="2"/>
+                        <line number="30" hits="0"/>
+                        <line number="40" hits="0"/>
+                        <line number="55" hits="0"/>
+                        <line number="68" hits="0"/>
+                    </lines>
+                </class>
+                <class name="schemas.py" filename="app/api/comments/schemas.py" line-rate="1.0" branch-rate="0">
+                    <lines>
+                        <line number="3" hits="8"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+        <package name="app.dao" line-rate="0.55" branch-rate="0">
+            <classes>
+                <class name="user_dao.py" filename="app/dao/user_dao.py" line-rate="0.75" branch-rate="0">
+                    <lines>
+                        <line number="5" hits="2"/>
+                        <line number="12" hits="0"/>
+                    </lines>
+                </class>
+                <class name="comment_dao.py" filename="app/dao/comment_dao.py" line-rate="0.42" branch-rate="0">
+                    <lines>
+                        <line number="6" hits="2"/>
+                        <line number="14" hits="0"/>
+                        <line number="22" hits="0"/>
+                        <line number="30" hits="0"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+    </packages>
+</coverage>

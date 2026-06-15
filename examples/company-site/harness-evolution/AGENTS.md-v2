@@ -1,0 +1,23 @@
+# company-site Agent 协作规范
+
+## 项目概述
+Next.js 前端 + FastAPI 后端 + PostgreSQL，Docker 部署。
+
+## 代码规范
+- Python 代码遵循 PEP 8，使用 ruff 检查
+- TypeScript 使用 strict 模式
+- 数据库迁移必须使用 Alembic，不允许直接修改表结构
+- **API 端点必须有权限校验装饰器**，裸路由不允许合并
+  （来源：review-backend 发现 3 个无鉴权端点，2026-04-28）
+
+## 提交规范
+- 遵循 Conventional Commits：feat/fix/chore/docs/test/refactor
+- PR 标题必须包含关联的 Issue 编号
+- **feat 类提交必须包含对应的 test 文件**，否则 review-backend 会标记为 P1
+  （来源：第一次 Sprint Review，测试覆盖率 41%，2026-04-21）
+
+## 发布规范
+- 发布前运行 deploy-check
+- 必须通过所有 CI 检查才能合并
+- **新增环境变量时**，必须同步更新 deploy-check 的 required_env_vars 列表
+  （来源：incident-notification-001，服务因缺少 NOTIFICATION_API_KEY 启动后报错，2026-05-14）

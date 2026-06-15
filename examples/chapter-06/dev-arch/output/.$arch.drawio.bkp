@@ -1,0 +1,40 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="bb2e9dd86894" name="Architecture">
+    <mxGraphModel dx="1426" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="用户浏览器" vertex="1">
+          <mxGeometry height="60" width="140" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="Next.js 前端（公开站 + 后台管理，同一工程）" vertex="1">
+          <mxGeometry height="60" width="140" x="240" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="FastAPI 后端" vertex="1">
+          <mxGeometry height="60" width="140" x="440" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="PostgreSQL 15" vertex="1">
+          <mxGeometry height="60" width="140" x="540" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="静态文件存储（uploads/ 目录，挂载到 api 容器）" vertex="1">
+          <mxGeometry height="60" width="140" x="240" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="e100" edge="1" parent="1" source="c2" style="endArrow=classic;html=1;rounded=0;strokeColor=#6c8ebf;fontSize=12;" target="c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e101" edge="1" parent="1" source="c3" style="endArrow=classic;html=1;rounded=0;strokeColor=#6c8ebf;fontSize=12;" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e102" edge="1" parent="1" source="c3" style="endArrow=classic;html=1;rounded=0;strokeColor=#6c8ebf;fontSize=12;" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e103" edge="1" parent="1" source="c4" style="endArrow=classic;html=1;rounded=0;strokeColor=#6c8ebf;fontSize=12;" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e104" edge="1" parent="1" source="c4" style="endArrow=classic;html=1;rounded=0;strokeColor=#6c8ebf;fontSize=12;" target="c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

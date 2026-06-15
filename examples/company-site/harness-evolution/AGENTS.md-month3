@@ -1,0 +1,44 @@
+# company-site Agent 协作规范（第 90 天版本）
+
+## 项目概述
+Next.js 前端 + FastAPI 后端 + PostgreSQL，Docker 部署。
+后台功能走 /dashboard 路由，需要 JWT 鉴权（role: admin/editor）。
+
+## 代码规范
+
+### 通用
+- Python 代码遵循 PEP 8，使用 ruff 检查（CI hard failure）
+- TypeScript 使用 strict 模式（CI hard failure）
+- 数据库迁移必须使用 Alembic，不允许直接修改表结构
+
+### 后端
+- **API 端点必须有权限校验装饰器**，裸路由不允许合并
+  （来源：review-backend P1，2026-04-28）
+- **外部服务调用必须设置超时**，默认 5s，长任务 30s，禁止无超时调用
+  （来源：邮件服务偶发超时导致请求挂起，incident-timeout-002，2026-05-27）
+- Pydantic model 的可选字段用 `Optional[T] = None`，不用裸 `None`
+  （来源：review-backend P2 高频出现，2026-05-08）
+
+### 前端
+- 组件超过 150 行时必须拆分，AI 一次生成不要超过这个规模
+  （来源：review-frontend P2 频繁出现"组件过大"，2026-05-03）
+- 表单验证逻辑必须在 schema 层（Zod），不在 UI 层直接写条件判断
+  （来源：两处表单逻辑不一致 Bug，2026-05-19）
+- `use client` 只加在真正需要客户端交互的组件，不要默认加
+  （来源：SSR 性能问题排查，2026-06-04）
+
+## 测试规范
+- **feat 类提交必须包含对应的 test 文件**
+  （来源：Sprint Review，覆盖率 41%，2026-04-21）
+- 所有外部 API 调用必须有 mock，禁止测试打真实外网
+  （来源：CI 偶发超时，根因是测试调用邮件服务真实接口，2026-06-02）
+- 数据库测试用独立的 test schema，不共用 dev schema
+  （来源：并发测试导致数据污染，2026-06-11）
+
+## 发布规范
+- 发布前运行 deploy-check（现已自动扫描代码提取环境变量，无需手动维护列表）
+- 必须通过所有 CI 检查才能合并
+
+## 已废弃规则（迁移到自动检查，不再需要手动遵守）
+- ~~新增环境变量时手动更新 required_env_vars 列表~~
+  （已被 deploy-check auto_scan 模式覆盖，2026-06-20 归档）

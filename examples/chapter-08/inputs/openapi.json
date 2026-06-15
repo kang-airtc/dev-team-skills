@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "现代公司站点 API",
+    "version": "0.1.0",
+    "description": "极简版：登录 + 评论 CRUD。所有接口遵循统一响应 {code, msg, data}。"
+  },
+  "servers": [
+    { "url": "http://localhost:8000", "description": "本地开发" }
+  ],
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "tags": ["auth"],
+        "summary": "用户登录",
+        "description": "用户名密码登录，成功返回 JWT。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "登录成功，返回 token"
+          },
+          "2003": {
+            "description": "用户名或密码错误（业务码）"
+          }
+        }
+      }
+    },
+    "/api/comments": {
+      "get": {
+        "tags": ["comments"],
+        "summary": "评论列表",
+        "description": "返回最新评论列表，按 id 倒序。",
+        "responses": {
+          "200": { "description": "返回评论数组" }
+        }
+      },
+      "post": {
+        "tags": ["comments"],
+        "summary": "发布评论",
+        "description": "需要登录。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CommentCreate" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "发布成功，返回评论详情" },
+          "1101": { "description": "未登录" },
+          "2202": { "description": "评论超过长度限制" }
+        }
+      }
+    },
+    "/api/comments/{comment_id}": {
+      "put": {
+        "tags": ["comments"],
+        "summary": "更新评论",
+        "description": "需要登录。",
+        "parameters": [
+          {
+            "name": "comment_id",
+            "in": "path",
+            "required": true,
+            "description": "评论 ID",
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CommentUpdate" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "更新成功" },
+          "2201": { "description": "评论不存在" }
+        }
+      },
+      "delete": {
+        "tags": ["comments"],
+        "summary": "删除评论",
+        "description": "需要登录。",
+        "parameters": [
+          {
+            "name": "comment_id",
+            "in": "path",
+            "required": true,
+            "description": "评论 ID",
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "删除成功" },
+          "2201": { "description": "评论不存在" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LoginRequest": {
+        "type": "object",
+        "required": ["username", "password"],
+        "properties": {
+          "username": { "type": "string", "minLength": 2, "maxLength": 32 },
+          "password": { "type": "string", "minLength": 6, "maxLength": 64 }
+        }
+      },
+      "CommentCreate": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "content": { "type": "string", "minLength": 1, "maxLength": 500 }
+        }
+      },
+      "CommentUpdate": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "content": { "type": "string", "minLength": 1, "maxLength": 500 }
+        }
+      }
+    }
+  }
+}

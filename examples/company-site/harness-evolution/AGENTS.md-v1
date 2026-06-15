@@ -1,0 +1,17 @@
+# company-site Agent 协作规范
+
+## 项目概述
+Next.js 前端 + FastAPI 后端 + PostgreSQL，Docker 部署。
+
+## 代码规范
+- Python 代码遵循 PEP 8，使用 ruff 检查
+- TypeScript 使用 strict 模式
+- 数据库迁移必须使用 Alembic，不允许直接修改表结构
+
+## 提交规范
+- 遵循 Conventional Commits：feat/fix/chore/docs/test/refactor
+- PR 标题必须包含关联的 Issue 编号
+
+## 发布规范
+- 发布前运行 deploy-check
+- 必须通过所有 CI 检查才能合并

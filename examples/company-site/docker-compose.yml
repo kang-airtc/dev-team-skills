@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: company-site-postgres
+    environment:
+      POSTGRES_USER: server
+      POSTGRES_PASSWORD: server
+      POSTGRES_DB: server
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U server"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: company-site-backend
+    environment:
+      SERVER_DB_HOST: postgres
+      SERVER_DB_PORT: 5432
+      SERVER_DB_USER: server
+      SERVER_DB_PASS: server
+      SERVER_DB_BASE: server
+      SERVER_RELOAD: "false"
+      SERVER_LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: company-site-frontend
+    environment:
+      NEXT_PUBLIC_API_BASE: http://localhost:8000/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

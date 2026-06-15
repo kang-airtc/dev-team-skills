@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0" failures="2" skipped="1" tests="18" time="12.453" timestamp="2026-04-26T10:30:00" hostname="ci-runner">
+        <testcase classname="tests.test_auth_utils.TestHashPassword" name="test_hash_password_success" time="0.012"/>
+        <testcase classname="tests.test_auth_utils.TestHashPassword" name="test_hash_password_empty_values" time="0.008"/>
+        <testcase classname="tests.test_auth_utils.TestVerifyPassword" name="test_verify_password_correct" time="0.045"/>
+        <testcase classname="tests.test_auth_utils.TestVerifyPassword" name="test_verify_password_wrong" time="0.039"/>
+        <testcase classname="tests.test_auth_utils.TestCreateAccessToken" name="test_create_access_token" time="0.015"/>
+        <testcase classname="tests.test_auth_utils.TestGetCurrentUser" name="test_get_current_user_valid" time="0.022"/>
+        <testcase classname="tests.test_auth_utils.TestGetCurrentUser" name="test_get_current_user_no_token" time="0.011"/>
+        <testcase classname="tests.test_api_auth.TestLogin" name="test_login_success" time="0.234"/>
+        <testcase classname="tests.test_api_auth.TestLogin" name="test_login_wrong_password" time="0.218">
+            <failure message="AssertionError: 200 != 401" type="AssertionError">
+                tests/test_api_auth.py:42: in test_login_wrong_password
+                    assert response.status_code == 401
+                AssertionError: 200 != 401
+                  +  where 200 = response.status_code
+            </failure>
+        </testcase>
+        <testcase classname="tests.test_api_comments.TestListComments" name="test_list_comments_default" time="0.156"/>
+        <testcase classname="tests.test_api_comments.TestListComments" name="test_list_comments_pagination" time="0.165"/>
+        <testcase classname="tests.test_api_comments.TestCreateComment" name="test_create_comment_authorized" time="0.198"/>
+        <testcase classname="tests.test_api_comments.TestCreateComment" name="test_create_comment_unauthorized" time="0.142"/>
+        <testcase classname="tests.test_api_comments.TestUpdateComment" name="test_update_comment_owner" time="0.187"/>
+        <testcase classname="tests.test_api_comments.TestUpdateComment" name="test_update_comment_not_found" time="0.132">
+            <failure message="AssertionError: comment found unexpectedly" type="AssertionError">
+                tests/test_api_comments.py:88: in test_update_comment_not_found
+                    assert response.json()['code'] == 2201
+                AssertionError: assert 0 == 2201
+            </failure>
+        </testcase>
+        <testcase classname="tests.test_api_comments.TestDeleteComment" name="test_delete_comment_owner" time="0.156"/>
+        <testcase classname="tests.test_api_comments.TestDeleteComment" name="test_delete_comment_others" time="0.143">
+            <skipped message="尚未实现权限校验，待后续修复" type="pytest.skip"/>
+        </testcase>
+        <testcase classname="tests.test_dao_user.TestUserDao" name="test_create_and_query_user" time="9.823"/>
+    </testsuite>
+</testsuites>
